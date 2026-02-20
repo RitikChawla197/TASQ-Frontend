@@ -21,7 +21,7 @@ npm run dev
 
 - `NEXT_PUBLIC_API_BASE_URL`
   Example:
-  `https://tasq-backend-2y6g.onrender.com`
+  `https://tasq-backend-xxxx.onrender.com`
 
 ## Deploy on Vercel
 
