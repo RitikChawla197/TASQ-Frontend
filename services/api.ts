@@ -7,10 +7,13 @@ declare module "axios" {
   }
 }
 
-const DEFAULT_API_BASE_URL = "https://tasq-backend-2y6g.onrender.com";
-const API_BASE_URL = (
-  process.env.NEXT_PUBLIC_API_BASE_URL || DEFAULT_API_BASE_URL
-).replace(/\/+$/, "");
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, "");
+
+if (!API_BASE_URL) {
+  throw new Error(
+    "Missing NEXT_PUBLIC_API_BASE_URL. Set it in your .env.local file."
+  );
+}
 
 export const api = axios.create({
   baseURL: `${API_BASE_URL}/`,
